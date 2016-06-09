@@ -53,3 +53,31 @@ if (!p.success ()) {
     Console.WriteLine (payment.token);
 }
 ```
+
+### Creating a Customer from card data.
+
+```cs
+using System;
+using Everypay;
+using System.Collections.Generic;
+
+Everypay.Everypay.apiKey = "sk_YoUraPikEy";
+Everypay.Everypay.isTest = true; // False for production environments.
+
+Dictionary<string, string> data = new Dictionary<string, string> ();
+data.Add ("card_number", "4111111111111111");
+data.Add ("expiration_year", "2020");
+data.Add ("expiration_month", "1");
+data.Add ("cvv", "123");
+data.Add ("holder_name", "JOHN DOE");
+
+CustomerResource c = new Everypay.CustomerResource ();
+c.create (data);
+
+if (!c.success ()) {
+    Console.WriteLine (c.getError ().message);
+} else {
+    Customer customer = c.getObject ();
+    Console.WriteLine (customer.token);
+}
+```
