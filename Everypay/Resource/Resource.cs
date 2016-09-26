@@ -81,7 +81,10 @@ namespace Everypay
 				uri = uri + "/" + data ["namespace"];
 			}
 
-			if (data.ContainsKey("token") && method == HttpMethod.Get) {
+			if (data.ContainsKey("token") 
+				&& (method == HttpMethod.Get
+					|| method == HttpMethod.Put)
+			) {
 				uri = uri + "/" + data ["token"];
 				data.Remove ("token");
 			}
