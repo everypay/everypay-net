@@ -83,7 +83,8 @@ namespace Everypay
 
 			if (data.ContainsKey("token") 
 				&& (method == HttpMethod.Get
-					|| method == HttpMethod.Put)
+					|| method == HttpMethod.Put
+					|| method == HttpMethod.Delete)
 			) {
 				uri = uri + "/" + data ["token"];
 				data.Remove ("token");
@@ -101,7 +102,7 @@ namespace Everypay
 			string authorizationHeader = "Basic " + Convert.ToBase64String (Encoding.UTF8.GetBytes(authorization));
 			request.Headers ["Authorization"] = authorizationHeader;
 
-			if (method == HttpMethod.Post) {
+			if (method == HttpMethod.Post || method == HttpMethod.Put) {
 				string postData = getQueryString(data);
 				request.ContentType = "application/x-www-form-urlencoded";
 				request.ContentLength = postData.Length;

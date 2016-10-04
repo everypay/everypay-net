@@ -10,7 +10,7 @@ namespace Everypay
 
 		public static string apiKey { get; set; }
 
-		const string apiUrl = "http://api.everypay.gr";
+		const string apiUrl = "https://api.everypay.gr";
 
 		const string testApiUrl = "https://sandbox-api.everypay.gr";
 

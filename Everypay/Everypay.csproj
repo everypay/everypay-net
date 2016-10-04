@@ -52,6 +52,9 @@
     <Compile Include="Exception\MethodNotAllowedException.cs" />
     <Compile Include="Model\Error.cs" />
     <Compile Include="PaymentCollection.cs" />
+    <Compile Include="Model\Schedule.cs" />
+    <Compile Include="Model\ScheduleItem.cs" />
+    <Compile Include="Resource\ScheduleResource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
