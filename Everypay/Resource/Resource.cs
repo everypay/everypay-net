@@ -74,7 +74,9 @@ namespace Everypay
 		protected string invoke(HttpMethod method, Dictionary<string, string> data = null)
 		{
 			reset ();
-
+			
+			ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+			
 			string uri = getEndpoint ();
 
 			if (data.ContainsKey ("namespace")) {
