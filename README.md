@@ -1,5 +1,12 @@
 # Everypay .NET library
 
+# ATTENTION
+**You must be using this plugin together with our [iFrame](https://docs.everypay.gr/accept-payments/payform/).**
+
+**You cannot gather card data unless you are [PCI DSS SAQ D Certification](https://www.pcisecuritystandards.org/documents/SAQ_D_v3_Merchant.pdf)**
+
+**Check our [docs](https://docs.everypay.gr/) for more information**
+
 ## Usage
 
 ### Creating a Payment from card token.
@@ -35,6 +42,12 @@ using System.Collections.Generic;
 Everypay.Everypay.apiKey = "sk_YoUraPikEy";
 Everypay.Everypay.isTest = true; // False for production environments.
 
+/*
+ You can only handle card information if you have PCI DSS SEQ D
+ This example is only for MOTO (mail order telephone order) payments
+ You need to use this plugin with our iFrame solution in order to handle card data
+*/
+ 
 Dictionary<string, string> data = new Dictionary<string, string> ();
 data.Add ("amount", "1000"); // 10 EURO in cents
 data.Add ("card_number", "4111111111111111");
